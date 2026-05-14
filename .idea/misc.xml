@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="MavenProjectsManager">
-    <option name="originalFiles">
-      <list>
-        <option value="$PROJECT_DIR$/Module4D/pom.xml" />
-        <option value="$PROJECT_DIR$/module4D/pom.xml" />
-        <option value="$PROJECT_DIR$/Modul4D/pom.xml" />
-        <option value="$PROJECT_DIR$/PersonalProject/pom.xml" />
-      </list>
-    </option>
+  <component name="Black">
+    <option name="sdkName" value="Python 3.13 (Testify-Automation_School)" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13 (Testify-Automation_School)" project-jdk-type="Python SDK" />
 </project>

@@ -7,7 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -26,23 +28,32 @@ public class seleniumAuthomation extends BaseTest{
 
 
     @Test(priority =1 )
-    public  void userRegistration() {
+    public  void userRegistration() throws InterruptedException {
+       // driver.manage().deleteAllCookies();
         driver.get("https://parabank.parasoft.com/parabank/");
         registrationScreen signup = new registrationScreen(driver);
         signup.getRegbtn().click();
+        Thread.sleep(5000);
         signup.getFirstName().sendKeys("joel");
         signup.getLastName().sendKeys("paul");
+        Thread.sleep(5000);
         signup.getAddress().sendKeys("12 urel street");
         signup.getCity().sendKeys("Ikorodu");
+        Thread.sleep(5000);
         signup.getState().sendKeys("Lagos");
         signup.getZipcode().sendKeys("100001");
+        Thread.sleep(5000);
         signup.getPhone().sendKeys("08057588945");
         signup.getSsn().sendKeys("5678");
-        signup.getUserName().sendKeys("mikel67@gmail.com");
+        Thread.sleep(5000);
+        signup.getUserName().sendKeys("mikeo6789@gmail.com");
         signup.getPassword().sendKeys("Test@1234");
+        Thread.sleep(5000);
         signup.getConfirmPassword().sendKeys("Test@1234");
+        Thread.sleep(5000);
         signup.getRegbtnfinal().click();
         String actualText = signup.getAccountCreationAssertion().getText();
+        Thread.sleep(5000);
         System.out.println(actualText);
         Assert.assertTrue(actualText.contains("Welcome"));
 
@@ -69,7 +80,7 @@ public class seleniumAuthomation extends BaseTest{
        select.selectByVisibleText("SAVINGS");
        WebElement Id = account.getAcctId();
        Id.click();
-        Select select2 = new Select(acctType);
+        Select select2 = new Select(Id);
         select2.selectByIndex(0);;
         account.getOpenNewAcctBtn().click();
         account.getLogOut().click();
